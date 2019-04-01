@@ -6,27 +6,18 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui'
-import {Message,Loading} from 'element-ui'
+import {Message} from 'element-ui'
 import utils from './common/js/utils'
 import constant from './common/js/constant'
 import 'element-ui/lib/theme-chalk/index.css'
 import './common/scss/index.scss'
-import store from './store'
 
 Vue.config.productionTip = false
 Vue.config.devtools = true;
 Vue.use(ElementUI); 
 Vue.use(VueAxios, axios);
 Vue.use(utils);
-//-----plot 开始 ---------- 
-// 注册组件
-import Components from './components/ploter/'
-Components.init()
 
-// 注册插件
-import Plugins from './plugins/'
-Plugins.init()
-//-----plot 结束 ---------- 
 // 后台项目地址
 axios.defaults.baseURL = window.config.domain;
 //解决跨域
@@ -131,7 +122,6 @@ axios.interceptors.response.use(
 window.wrapHandshake =new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })

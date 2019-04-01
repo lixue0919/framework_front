@@ -1,6 +1,6 @@
 var urlMatches = /(.*:\d+)\/.*/.exec(window.location.href);
 window.config = {
-  domain: 'http://localhost:8809/', 
+  domain: 'http://localhost:8810/', 
   'booth':{
     'selectRefreshTime':'120000', //选择展位更新时间
     'anonRefreshTime':'120000' ,//查看展位更新时间
