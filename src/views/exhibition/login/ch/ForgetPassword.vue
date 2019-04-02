@@ -44,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/common/scss/login.scss';
 .lgin {
-  margin-top: 3.5rem;
+  margin-top: 3.3rem;
   .el-button {
     font-size:20px;
     color:#fff;

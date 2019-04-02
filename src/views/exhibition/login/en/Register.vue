@@ -190,6 +190,6 @@ export default {
 <style lang="scss" scoped>
 @import '@/common/scss/login.scss';
 .lgin {
-  margin-top: 4rem;
+  margin-top: 3.8rem;
 }
 </style>
