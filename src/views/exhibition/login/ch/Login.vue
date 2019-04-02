@@ -4,7 +4,7 @@
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
-        <div class="login-form" :style="{width: widthData+'px',height: widthData+'px'}">
+        <div :class='["login-form",CONSTANT.widthData<=1275?"login-form-small":"login-form-large"]'>
           <div class="filed left">
             <router-link :to="{path:'/exhibition/login/ch/Administrator'}"><i class="iconfont icon-yonghu icou"></i></router-link>
             <span class="formTitleStyle">用户登录</span>
@@ -51,8 +51,7 @@ export default {
         // 校验标识符
         usernameAlertFlag: false,
         passwordAlertFlag: false,
-        validateAlertFlag: false,
-        widthData: 400
+        validateAlertFlag: false
     }
   },
   created(){
@@ -61,16 +60,7 @@ export default {
     if (type == 'register'||type == 'forgetUsername' || type == 'forgetPassword') {
       this.username = this.$route.query.username;
       this.password = this.$route.query.password;
-    } 
-    var cliWidth = document.body.clientWidth;
-    if (cliWidth <= 1275) {
-      this.widthData = 360;
     }
-  },
-  computed: {
-    getWidthData: function() {
-      return '200px';
-    },
   },
   methods:{
     // 验证用户名是否为手机号

@@ -85,8 +85,8 @@ $blackcolor: #2c2c2c;
   }
 }
 .login-form {
-  height: 400px;
-  width: 400px;
+  // height: 400px;
+  // width: 400px;
   background: url("/static/images/login/form_bg.png") no-repeat;
   background-size: 100% 100%; 
   .signstyle {
@@ -96,6 +96,14 @@ $blackcolor: #2c2c2c;
       cursor: pointer;
     }
   }
+}
+.login-form-small {
+  height: 360px;
+  width: 360px;
+}
+.login-form-large {
+  height: 400px;
+  width: 400px;
 }
 .el-button {
   border: 0px solid #dcdfe6;
