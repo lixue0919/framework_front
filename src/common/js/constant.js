@@ -5,6 +5,7 @@ const tableheight30 = 1291;
 //const tableheight = tableheight10;
 //浏览器宽度 by li.xue 2019/4/2
 const widthData = document.body.clientWidth;
+const widthReal = 1450
 
 export default {
   currentUser,
@@ -12,5 +13,6 @@ export default {
   tableheight20,
   tableheight30,
   //tableheight
-  widthData
+  widthData,
+  widthReal
 }

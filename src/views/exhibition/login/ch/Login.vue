@@ -4,7 +4,7 @@
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
-        <div :class='["login-form",CONSTANT.widthData<=1275?"login-form-small":"login-form-large"]'>
+        <div :class='["login-form",CONSTANT.widthData<=CONSTANT.widthReal?"login-form-small":"login-form-large"]'>
           <div class="filed left">
             <router-link :to="{path:'/exhibition/login/ch/Administrator'}"><i class="iconfont icon-yonghu icou"></i></router-link>
             <span class="formTitleStyle">用户登录</span>
@@ -27,7 +27,7 @@
             <el-row class="filed right">
               <span class="muchtab"><router-link :to="{path:'/exhibition/login/ch/ForgetUsername'}"><a>忘记用户名</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/ForgetPassword'}"><a>忘记密码</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/Reset'}"><a>重置账户</a></router-link></span>
             </el-row>
-            <div :class='["filed","lgin",CONSTANT.widthData<=1275?"lgin-small":"lgin-large"]'>
+            <div :class='["filed","lgin",CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>
               <el-button type="danger" @click="login" round>登录</el-button>
             </div>
           </el-form>
