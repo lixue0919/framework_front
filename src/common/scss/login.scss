@@ -133,6 +133,8 @@ $blackcolor: #2c2c2c;
   letter-spacing: 3px;
   color: #053d84;
   background: #f2f2f5;
+  outline:none;
+  // border-radius:0px !important;
 }
 a {
   text-decoration: none;
@@ -353,10 +355,11 @@ a {
   border: 1px solid #e6e6e6;
 }
 .verification1 {
-  // vertical-align: middle;
-  // transform: translate(-15px,0);
-  height: 2.5rem;
-  width: 7.1875rem;
+  height: 1.85rem;
+  width: 5rem;
+  position: absolute;
+  margin-top: -2.2rem;
+  margin-left: 3.95rem;
 }
 .forget {
   text-align: right;

@@ -4,29 +4,29 @@
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
-        <div class="login-form" >
+        <div class="login-form" :style="{width: widthData+'px',height: widthData+'px'}">
           <div class="filed left">
             <router-link :to="{path:'/exhibition/login/ch/Administrator'}"><i class="iconfont icon-yonghu icou"></i></router-link>
             <span class="formTitleStyle">用户登录</span>
             <span class="signstyle">没有账户?<router-link :to="{path:'/exhibition/login/ch/Register'}"><a>去注册</a></router-link></span>
           </div>
           <el-form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed">
+            <el-row class="filed">
               <el-input placeholder="用户名" v-model="username" prefix-icon="iconfont icon-login-username" @blur="mobileCheck" class="iconStyle"></el-input>
-              <p class="alert" v-show="usernameAlertFlag">*请输入正确手机号</p>
-            </div>
-            <div class="filed">
+              <p class="alert" v-show="usernameAlertFlag">&nbsp;&nbsp;*请输入正确手机号</p>
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="密码" v-model="password" prefix-icon="iconfont icon-login-password" type="password" @blur="passwordCheck"></el-input>
-              <p class="alert1" v-show="passwordAlertFlag">*请输入密码</p>
-            </div>
-            <div class="filed">
-              <el-input placeholder="验证码" class="yanzhengma_input"  v-model="picLyanzhengma" prefix-icon="iconfont icon-login-validate" @blur="validateCheck"></el-input>
-              <input type="button"  class="verification1 bk" id="code" @click="createCode"  v-model="checkCode"/>
-              <p class="alert2" v-show="validateAlertFlag">*验证码错误</p>
-            </div>
-            <div class="filed right">
+              <p class="alert1" v-show="passwordAlertFlag">&nbsp;&nbsp;*请输入密码</p>
+            </el-row>
+            <el-row class="filed">
+              <el-input placeholder="验证码" v-model="picLyanzhengma" prefix-icon="iconfont icon-login-validate" @blur="validateCheck"></el-input>
+              <input type="button" class="verification1 bk" id="code" @click="createCode" v-model="checkCode"></input>
+              <p class="alert2" v-show="validateAlertFlag">&nbsp;&nbsp;*验证码错误</p>
+            </el-row>
+            <el-row class="filed right">
               <span class="muchtab"><router-link :to="{path:'/exhibition/login/ch/ForgetUsername'}"><a>忘记用户名</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/ForgetPassword'}"><a>忘记密码</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/Reset'}"><a>重置账户</a></router-link></span>
-            </div>
+            </el-row>
             <div class="filed lgin">
               <el-button type="danger" @click="login" round>登录</el-button>
             </div>
@@ -51,7 +51,8 @@ export default {
         // 校验标识符
         usernameAlertFlag: false,
         passwordAlertFlag: false,
-        validateAlertFlag: false
+        validateAlertFlag: false,
+        widthData: 400
     }
   },
   created(){
@@ -61,6 +62,15 @@ export default {
       this.username = this.$route.query.username;
       this.password = this.$route.query.password;
     } 
+    var cliWidth = document.body.clientWidth;
+    if (cliWidth <= 1275) {
+      this.widthData = 360;
+    }
+  },
+  computed: {
+    getWidthData: function() {
+      return '200px';
+    },
   },
   methods:{
     // 验证用户名是否为手机号
