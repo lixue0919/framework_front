@@ -1,4 +1,5 @@
 <template>
+  <div id="changePasswordEn">
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
@@ -30,6 +31,7 @@
       </el-col>
       <el-col :span="8">&nbsp;</el-col>
     </el-row>
+  </div>
 </template>
 
 <script>
@@ -124,9 +126,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/common/scss/login.scss';
-.lgin {
-  margin-top: 7.25rem;
+<style lang="scss">
+#changePasswordEn{
+  @import '@/common/scss/login.scss';
+  .lgin {
+    margin-top: 7.25rem;
+  }
 }
 </style>

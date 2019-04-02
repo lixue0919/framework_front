@@ -1,34 +1,36 @@
 <template>
-  <!-- 用户登录 -->
-  <el-row class="logincenter">
-    <el-col :span="8">&nbsp;</el-col>
-    <el-col :span="8" style="text-align:-webkit-center">
-      <div class="login-form">
-        <div class="filed left">
-          <i class="iconfont icou"></i>
-          <span class="formTitleStyle">密码修改</span>
-          <span class="signstyle">
-            <a @click="open()">返回登录</a>
-          </span>
+  <div id="mailbox">
+    <!-- 邮箱验证 -->
+    <el-row class="logincenter">
+      <el-col :span="8">&nbsp;</el-col>
+      <el-col :span="8" style="text-align:-webkit-center">
+        <div class="login-form">
+          <div class="filed left">
+            <i class="iconfont icou"></i>
+            <span class="formTitleStyle">密码修改</span>
+            <span class="signstyle">
+              <a @click="open()">返回登录</a>
+            </span>
+          </div>
+          <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform" method="post">
+            <div class="filed">
+              <el-input placeholder="邮箱" v-model="email" name="email" id="email" prefix-icon="iconfont icon-login-mail" @blur="FPBmailCheck"></el-input>
+              <button type="button" id="FUmail-btn" class="verficode phonebtn" @click="getFPBMailCode()" v-text=mailCodeText :disabled="mailBtnDisabled"></button>
+              <p class="alert" v-show="mailAlertFlag">*邮箱格式不正确</p>
+            </div>
+            <div class="filed">
+              <el-input placeholder="邮件验证码" v-model="mailCode" name="mailCode" id="mailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
+              <p class="alert1" v-show="mailCodeAlertFlag">*验证码输入错误</p>
+            </div>
+            <div class="filed lgin">
+              <el-button type="danger" @click="FPBIdentify()" round>确定</el-button>
+            </div>
+          </form>
         </div>
-        <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform" method="post">
-          <div class="filed">
-            <el-input placeholder="邮箱" v-model="email" name="email" id="email" prefix-icon="iconfont icon-login-mail" @blur="FPBmailCheck"></el-input>
-            <button type="button" id="FUmail-btn" class="verficode phonebtn" @click="getFPBMailCode()" v-text=mailCodeText :disabled="mailBtnDisabled"></button>
-            <p class="alert" v-show="mailAlertFlag">*邮箱格式不正确</p>
-          </div>
-          <div class="filed">
-            <el-input placeholder="邮件验证码" v-model="mailCode" name="mailCode" id="mailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
-            <p class="alert1" v-show="mailCodeAlertFlag">*验证码输入错误</p>
-          </div>
-          <div class="filed lgin">
-            <el-button type="danger" @click="FPBIdentify()" round>确定</el-button>
-          </div>
-        </form>
-      </div>
-    </el-col>
-    <el-col :span="8">&nbsp;</el-col>
-  </el-row>
+      </el-col>
+      <el-col :span="8">&nbsp;</el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -149,6 +151,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@/common/scss/login.scss";
+<style lang="scss">
+#mailbox{
+  @import "@/common/scss/login.scss";
+}
 </style>

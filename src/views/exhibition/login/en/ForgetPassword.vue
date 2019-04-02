@@ -1,32 +1,34 @@
 <template>
-  <!-- 用户登录 -->
-  <el-row class="logincenter">
-    <el-col :span="8" >&nbsp;</el-col>
-    <el-col :span="8" style="text-align:-webkit-center">
-      <div class="login-form" >
-        <div class="filed left">
-          <i class="iconfont icou"></i>
-          <span class="formTitleStyle">Password Modification</span>
-          <span class="signstyle"><a @click="open()">Return Login</a></span>
+  <div id="forgetPasswordEn">
+    <!-- 忘记密码 -->
+    <el-row class="logincenter">
+      <el-col :span="8" >&nbsp;</el-col>
+      <el-col :span="8" style="text-align:-webkit-center">
+        <div class="login-form" >
+          <div class="filed left">
+            <i class="iconfont icou"></i>
+            <span class="formTitleStyle">Password Modification</span>
+            <span class="signstyle"><a @click="open()">Return Login</a></span>
+          </div>
+          <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
+            <div class="filed">
+              <el-input placeholder="Email" v-model="FPBmail" name="FPBmail" id="FPBmail" prefix-icon="iconfont icon-login-mail" @blur="FPBmailCheck"></el-input>
+              <button type="button" id="FUmail-btn" class="verficode phonebtnEN" @click="getFPBMailCode()" v-text=FPBmailCodeText :disabled="FPBmailBtnDisabled"></button>
+              <p class="alert" v-show="mailAlertFlag">*The email is incorrect.</p>
+            </div>
+            <div class="filed">
+              <el-input placeholder="Mail Verification Code"  v-model="FPBmailCode" name="FPBmailCode" id="FPBmailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
+              <p class="alert1" v-show="mailCodeAlertFlag">*The verification code is incorrect.</p>
+            </div>
+            <div class="filed lgin">
+              <el-button type="danger" @click="FPBIdentify()" round>Confirm</el-button>
+            </div>
+          </form>
         </div>
-        <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-          <div class="filed">
-            <el-input placeholder="Email" v-model="FPBmail" name="FPBmail" id="FPBmail" prefix-icon="iconfont icon-login-mail" @blur="FPBmailCheck"></el-input>
-            <button type="button" id="FUmail-btn" class="verficode phonebtnEN" @click="getFPBMailCode()" v-text=FPBmailCodeText :disabled="FPBmailBtnDisabled"></button>
-            <p class="alert" v-show="mailAlertFlag">*The email is incorrect.</p>
-          </div>
-          <div class="filed">
-            <el-input placeholder="Mail Verification Code"  v-model="FPBmailCode" name="FPBmailCode" id="FPBmailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
-            <p class="alert1" v-show="mailCodeAlertFlag">*The verification code is incorrect.</p>
-          </div>
-          <div class="filed lgin">
-            <el-button type="danger" @click="FPBIdentify()" round>Confirm</el-button>
-          </div>
-        </form>
-      </div>
-    </el-col>
-    <el-col :span="8">&nbsp;</el-col>
-  </el-row>
+      </el-col>
+      <el-col :span="8">&nbsp;</el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -150,9 +152,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/common/scss/login.scss';
-.lgin {
-  margin-top: 10.8rem;
+<style lang="scss">
+#forgetPasswordEn{
+  @import '@/common/scss/login.scss';
+  .lgin {
+    margin-top: 10.8rem;
+  }
 }
 </style>

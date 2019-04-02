@@ -1,5 +1,6 @@
 <template>
-    <!-- 用户登录 -->
+  <div id="forgetUsernameEn">
+    <!-- 忘记用户名 -->
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
@@ -27,6 +28,7 @@
       </el-col>
       <el-col :span="8">&nbsp;</el-col>
     </el-row>
+  </div>
 </template>
 
 <script>
@@ -156,6 +158,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/common/scss/login.scss';
+<style lang="scss">
+#forgetUsernameEn{
+  @import '@/common/scss/login.scss';
+}
 </style>

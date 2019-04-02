@@ -1,5 +1,6 @@
 <template>
-    <!-- 用户登录 -->
+  <div id="forgetPassword">
+    <!-- 忘记密码 -->
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
@@ -21,6 +22,7 @@
       </el-col>
       <el-col :span="8">&nbsp;</el-col>
     </el-row>
+  </div>
 </template>
 
 <script>
@@ -41,21 +43,23 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/common/scss/login.scss';
-.lgin {
-  margin-top: 3.3rem;
-  .el-button {
-    font-size:20px;
-    color:#fff;
-    width: 280px;
-    background-color: #ea2530;
-  }
-  .el-button:hover {
-    font-size:20px;
-    color:#fff;
-    width: 280px;
-    background-color: #ea2530;
+<style lang="scss">
+#forgetPassword{
+  @import '@/common/scss/login.scss';
+  .lgin {
+    margin-top: 3.3rem;
+    .el-button {
+      font-size:20px;
+      color:#fff;
+      width: 280px;
+      background-color: #ea2530;
+    }
+    .el-button:hover {
+      font-size:20px;
+      color:#fff;
+      width: 280px;
+      background-color: #ea2530;
+    }
   }
 }
 </style>

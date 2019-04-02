@@ -1,42 +1,44 @@
 <template>
-  <!-- 用户登录 -->
-  <el-row class="logincenter">
-    <el-col :span="8">&nbsp;</el-col>
-    <el-col :span="8" style="text-align:-webkit-center">
-      <div class="login-form">
-        <div class="filed left">
-          <i class="iconfont icou"></i>
-          <span class="formTitleStyle">User Register</span>
-          <span class="signstyle">Exist Account?<a @click="open()">To Login</a></span>
+  <div id="registerEn">
+    <!-- 注册 -->
+    <el-row class="logincenter">
+      <el-col :span="8">&nbsp;</el-col>
+      <el-col :span="8" style="text-align:-webkit-center">
+        <div class="login-form">
+          <div class="filed left">
+            <i class="iconfont icou"></i>
+            <span class="formTitleStyle">User Register</span>
+            <span class="signstyle">Exist Account?<a @click="open()">To Login</a></span>
+          </div>
+          <form autocomplete="off" name="reg-form">
+            <div class="filed">
+              <el-input v-model="mail" name="mail" id="mail" placeholder="Please input an email" @blur="mailCheck" type="text" class="inputstyle" prefix-icon="iconfont icon-login-mail"></el-input>
+              <button type="button" id="mail-btn" class="verficode phonebtnEN" @click="getMailCode()" v-text=mailCodeText :disabled="mailBtnDisabled"></button>
+              <p class="alert" v-show="mailAlertFlag">*The email is incorrect.</p>
+            </div>
+            <div class="filed">
+              <el-input v-model="mailCode" name="mailCode" id="mailCode" placeholder="Mail Verification Code" @blur="mailCodeCheck" prefix-icon="iconfont icon-login-validate"></el-input>
+              <p class="alert1" v-show="mailCodeAlertFlag">*The verification code is incorrect.</p>
+            </div>
+            <div class="filed">
+              <el-input placeholder="Please input a password" prefix-icon="iconfont icon-login-password" type="password" class="inputstyle" v-model="password1" name="password1"
+                id="password1" @blur="password1Check"></el-input>
+              <p class="alert2" v-show="password1AlertFlag">*Password must be 6-16-bit alphanumeric combination.</p>
+            </div>
+            <div class="filed">
+              <el-input type="password" class="inputstyle" v-model="password2" name="password2" id="password2"
+                placeholder="Please input the password again" @blur="password2Check" prefix-icon="iconfont icon-login-checkpass"></el-input>
+              <p class="alert3" v-show="password2AlertFlag">*The two entries do not match.</p>
+            </div>
+            <div class="filed lgin">
+              <el-button type="danger" @click="register()" round>Register</el-button>
+            </div>
+          </form>
         </div>
-        <form autocomplete="off" name="reg-form">
-          <div class="filed">
-            <el-input v-model="mail" name="mail" id="mail" placeholder="Please input an email" @blur="mailCheck" type="text" class="inputstyle" prefix-icon="iconfont icon-login-mail"></el-input>
-            <button type="button" id="mail-btn" class="verficode phonebtnEN" @click="getMailCode()" v-text=mailCodeText :disabled="mailBtnDisabled"></button>
-            <p class="alert" v-show="mailAlertFlag">*The email is incorrect.</p>
-          </div>
-          <div class="filed">
-            <el-input v-model="mailCode" name="mailCode" id="mailCode" placeholder="Mail Verification Code" @blur="mailCodeCheck" prefix-icon="iconfont icon-login-validate"></el-input>
-            <p class="alert1" v-show="mailCodeAlertFlag">*The verification code is incorrect.</p>
-          </div>
-          <div class="filed">
-            <el-input placeholder="Please input a password" prefix-icon="iconfont icon-login-password" type="password" class="inputstyle" v-model="password1" name="password1"
-              id="password1" @blur="password1Check"></el-input>
-            <p class="alert2" v-show="password1AlertFlag">*Password must be 6-16-bit alphanumeric combination.</p>
-          </div>
-          <div class="filed">
-            <el-input type="password" class="inputstyle" v-model="password2" name="password2" id="password2"
-              placeholder="Please input the password again" @blur="password2Check" prefix-icon="iconfont icon-login-checkpass"></el-input>
-            <p class="alert3" v-show="password2AlertFlag">*The two entries do not match.</p>
-          </div>
-          <div class="filed lgin">
-            <el-button type="danger" @click="register()" round>Register</el-button>
-          </div>
-        </form>
-      </div>
-    </el-col>
-    <el-col :span="8">&nbsp;</el-col>
-  </el-row>
+      </el-col>
+      <el-col :span="8">&nbsp;</el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -187,9 +189,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import '@/common/scss/login.scss';
-.lgin {
-  margin-top: 3.8rem;
+<style lang="scss">
+#registerEn{
+  @import '@/common/scss/login.scss';
+  .lgin {
+    margin-top: 3.8rem;
+  }
 }
 </style>

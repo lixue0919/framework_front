@@ -28,7 +28,9 @@ $blackcolor: #2c2c2c;
   overflow: hidden;
   overflow-y: auto;
   z-index: 1000;
-  background: url("/static/images/login/login.png") center 100% #65809d;
+  //background: url("/static/images/login/login.png") center 100% #65809d;
+  background: url("/static/images/login/login.png") center #65809d no-repeat;
+  background-size: cover;
   * {
     font-size: 0.95rem;
   }
@@ -141,28 +143,28 @@ a {
 }
 .alert{
   position:absolute;
-  top:71px;
+  // top:71px;
   margin-left:0px !important;
   color:#EA2530;
   font-size: 0.8rem;
 }
 .alert1{
   position:absolute;
-  top:127px;
+  // top:127px;
   margin-left:0px !important;
   color:#EA2530;
   font-size: 0.8rem;
 }
 .alert2{
   position:absolute;
-  top:183px;
+  // top:183px;
   margin-left:0px !important;
   color:#EA2530;
   font-size: 0.8rem;
 }
 .alert3{
   position:absolute;
-  top:239px;
+  // top:239px;
   margin-left:0px !important;
   color:#EA2530;
   font-size: 0.8rem;
@@ -417,4 +419,24 @@ a {
   color:#EA2530;
 }
 //--end
-
+.filed input {
+  border-radius:20px !important;
+}
+/*chrome自动填充变黄处理*/
+input:-webkit-autofill {
+  -webkit-animation: autofill-fix 1s infinite;
+}
+@-webkit-keyframes autofill-fix {
+  from {
+    background-color: transparent
+  }
+  to {
+    background-color: transparent
+  }
+}
+.el-input__prefix{
+  left: 15px !important;
+}
+.el-input--prefix .el-input__inner {
+  padding-left: 40px;
+}
