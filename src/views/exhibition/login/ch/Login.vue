@@ -27,7 +27,7 @@
             <el-row class="filed right">
               <span class="muchtab"><router-link :to="{path:'/exhibition/login/ch/ForgetUsername'}"><a>忘记用户名</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/ForgetPassword'}"><a>忘记密码</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/Reset'}"><a>重置账户</a></router-link></span>
             </el-row>
-            <div class="filed lgin">
+            <div :class='["filed","lgin",CONSTANT.widthData<=1275?"lgin-small":"lgin-large"]'>
               <el-button type="danger" @click="login" round>登录</el-button>
             </div>
           </el-form>
@@ -187,7 +187,10 @@ export default {
 <style lang="scss">
 #login{
   @import '@/common/scss/login.scss';
-  .lgin {
+  .lgin-small {
+    margin-top: 2.7rem;
+  }
+  .lgin-large {
     margin-top: 5rem;
   }
   .footer {
