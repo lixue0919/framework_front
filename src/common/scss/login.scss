@@ -34,22 +34,28 @@ $blackcolor: #2c2c2c;
   * {
     font-size: 0.95rem;
   }
-  p {
-    margin: 4rem 0 0 6rem;
-  }
+  // p {
+  //   margin: 4rem 0 0 6rem;
+  // }
+  // .pstyle {
+  //   margin: 4rem 0 0 0;
+  // }
   .imgstyle {
     height: $heightimg;
     width: $widthimg;
     float: left;
     position: absolute;
-    margin: 4rem 0 0 6rem;
+    margin: 4rem 0 0 4rem;
   }
   .titlestyle {
     height: $heighttitle;
     width: $widthtitle;
   }
-  .pstyle {
-    margin: 4rem 0 0 0;
+  .pstyle-large {
+    margin: 6rem 0 0 0;
+  }
+  .pstyle-small {
+    margin: 2rem 0 0 0;
   }
 }
 .lana {
