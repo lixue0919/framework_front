@@ -443,3 +443,7 @@ input:-webkit-autofill {
 .el-input--prefix .el-input__inner {
   padding-left: 40px;
 }
+input:focus{
+  box-shadow:0px 0px 5px #EA2530;
+  border: 1px solid #EA2530;
+}
