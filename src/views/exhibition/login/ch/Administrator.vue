@@ -4,7 +4,7 @@
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
-        <div class="login-form" >
+        <div :class='["login-form",CONSTANT.widthData<=CONSTANT.widthReal?"login-form-small":"login-form-large"]'>
           <div class="filed left">
             <router-link :to="{path:'/exhibition/login/ch/Login'}"><i class="iconfont icon-yonghu icou"></i></router-link>
             <span class="formTitleStyle">管理员登录</span>

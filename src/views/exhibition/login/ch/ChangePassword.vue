@@ -18,12 +18,12 @@
             <div class="filed">
               <el-input placeholder="请输入密码" prefix-icon="iconfont icon-login-password" type="password" class="inputstyle" v-model="FPDpassword1" name="FPDpassword1"
                 id="FPDpassword1" @blur="FPDpassword1Check"></el-input>
-              <p class="alert1" v-show="FPDpassword1AlertFlag">*密码需为6-16位字母数字组合</p>
+              <p class="alert1" v-show="FPDpassword1AlertFlag">&nbsp;&nbsp;*密码需为6-16位字母数字组合</p>
             </div>
             <div class="filed">
               <el-input type="password" class="inputstyle" v-model="FPDpassword2" name="FPDpassword2" id="FPDpassword2"
                 placeholder="请再次输入密码" @blur="FPDpassword2Check" prefix-icon="iconfont icon-login-checkpass"></el-input>
-              <p class="alert2" v-show="FPDpassword2AlertFlag">*两次密码不一致</p>
+              <p class="alert2" v-show="FPDpassword2AlertFlag">&nbsp;&nbsp;*两次密码不一致</p>
             </div>
             <div class="filed lgin">
             <el-button type="danger" @click="updatePassword()" round>确定</el-button>

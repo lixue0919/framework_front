@@ -16,11 +16,11 @@
             <div class="filed">
               <el-input placeholder="邮箱" v-model="FUmail" name="FUmail" id="FUmail" prefix-icon="iconfont icon-login-mail" @blur="FUmailCheck"></el-input>
               <button type="button" id="FUmail-btn" class="verficode phonebtn" @click="getFUMailCode()" v-text=FUmailCodeText :disabled="FUmailBtnDisabled"></button>
-              <p class="alert" v-show="mailAlertFlag">*邮箱格式不正确</p>
+              <p class="alert" v-show="mailAlertFlag">&nbsp;&nbsp;*邮箱格式不正确</p>
             </div>
             <div class="filed">
               <el-input placeholder="邮件验证码" v-model="FUmailCode" name="FUmailCode" id="FUmailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
-              <p class="alert1" v-show="mailCodeAlertFlag">*验证码输入错误</p>
+              <p class="alert1" v-show="mailCodeAlertFlag">&nbsp;&nbsp;*验证码输入错误</p>
             </div>
             <div class="filed lgin">
               <el-button type="danger" @click="FUIdentify()" round>确定</el-button>

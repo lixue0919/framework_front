@@ -4,7 +4,7 @@
     <el-row class="logincenter">
       <el-col :span="8" >&nbsp;</el-col>
       <el-col :span="8" style="text-align:-webkit-center">
-        <div :class='["login-form",CONSTANT.widthData<=CONSTANT.widthReal?"login-form-small":"login-form-large"]'>
+        <div class="login-form">
           <div class="filed left">
             <router-link :to="{path:'/exhibition/login/ch/Administrator'}"><i class="iconfont icon-yonghu icou"></i></router-link>
             <span class="formTitleStyle">用户登录</span>
@@ -27,9 +27,10 @@
             <el-row class="filed right">
               <span class="muchtab"><router-link :to="{path:'/exhibition/login/ch/ForgetUsername'}"><a>忘记用户名</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/ForgetPassword'}"><a>忘记密码</a></router-link>  |  <router-link :to="{path:'/exhibition/login/ch/Reset'}"><a>重置账户</a></router-link></span>
             </el-row>
-            <div :class='["filed","lgin",CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed lgin">
               <el-button type="danger" @click="login" round>登录</el-button>
-            </div>
+            </el-row>
           </el-form>
         </div>
       </el-col>
@@ -51,10 +52,18 @@ export default {
         // 校验标识符
         usernameAlertFlag: false,
         passwordAlertFlag: false,
-        validateAlertFlag: false
+        validateAlertFlag: false,
+        aaa: this.CONSTANT.widthData
     }
   },
   created(){
+    //判断是否宽屏
+    var winWide = window.screen.availWidth;
+    var wideScreen = false;
+    var zm = this.aaa / 1920;
+    document.body.style.zoom = 0.8;
+    console.log(winWide)
+    console.log(zm);
     this.createCode();
     var type = this.$route.query.type;
     if (type == 'register'||type == 'forgetUsername' || type == 'forgetPassword') {
@@ -187,11 +196,8 @@ export default {
 <style lang="scss">
 #login{
   @import '@/common/scss/login.scss';
-  .lgin-small {
-    margin-top: 2.7rem;
-  }
-  .lgin-large {
-    margin-top: 5rem;
+  .lgin {
+    // margin-top: 5rem;
   }
   .footer {
     text-align: -webkit-center;

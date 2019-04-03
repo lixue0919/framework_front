@@ -16,19 +16,19 @@
             <div class="filed">
               <el-input type="text" class="inputstyle" v-model="mobile" name="mobile" id="mobile" placeholder="请输入手机号" prefix-icon="iconfont icon-login-phone" @blur="mobileCheck"></el-input>
               <button type="button" id="mobile-btn" class="verficode phonebtn" @click="getMessageCode()" v-text="messageCodeText" :disabled="mobileBtnDisabled"></button>
-              <p class="alert" v-show="mobileAlertFlag">*请填写正确的手机号码</p>
+              <p class="alert" v-show="mobileAlertFlag">&nbsp;&nbsp;*请填写正确的手机号码</p>
             </div>
             <div class="filed">
               <el-input v-model="messageCode" name="messageCode" id="messageCode" placeholder="请输入手机验证码" @blur="messageCodeCheck" prefix-icon="iconfont icon-login-validate"></el-input>
-              <p class="alert1" v-show="messageCodeAlertFlag">*验证码不正确</p>
+              <p class="alert1" v-show="messageCodeAlertFlag">&nbsp;&nbsp;*验证码不正确</p>
             </div>
             <div class="filed">
               <el-input placeholder="请输入密码" prefix-icon="iconfont icon-login-password" type="password" class="inputstyle" v-model="password1" name="password1" id="password1" @blur="password1Check"></el-input>
-              <p class="alert2" v-show="password1AlertFlag">*密码需为6-16位字母数字组合</p>
+              <p class="alert2" v-show="password1AlertFlag">&nbsp;&nbsp;*密码需为6-16位字母数字组合</p>
             </div>
             <div class="filed">
               <el-input type="password" class="inputstyle" v-model="password2" name="password2" id="password2" placeholder="请再次输入密码" @blur="password2Check" prefix-icon="iconfont icon-login-checkpass"></el-input>
-              <p class="alert3" v-show="password2AlertFlag">*两次密码不一致</p>
+              <p class="alert3" v-show="password2AlertFlag">&nbsp;&nbsp;*两次密码不一致</p>
             </div>
 
             <div class="filed lgin">
