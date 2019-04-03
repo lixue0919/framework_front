@@ -87,6 +87,12 @@ $blackcolor: #2c2c2c;
     background-color: $bgcolor2;
   }
 }
+.lgin-small {
+  margin-top: 3rem;
+}
+.lgin-large {
+  margin-top: 5.1rem;
+}
 .login-form {
   height: 395px;
   width: 400px;
@@ -177,13 +183,21 @@ a {
 /*获取验证码样式*/
 .phonebtn {
   position: absolute;
-  margin-top: -1.95rem;
-  margin-left: 4.2rem;
+  // margin-top: -1.95rem;
+  // margin-left: 4.2rem;
   border: none;
   background: #ffffff;
   color: #fb6a74;
   cursor: pointer;
   outline: none;
+}
+.phonebtn-small {
+  margin-top: -1.6rem;
+  margin-left: 3.8rem;
+}
+.phonebtn-large {
+  margin-top: -1.8rem;
+  margin-left: 5.2rem;
 }
 /*Get Verification Code样式*/
 .phonebtnEN {
@@ -368,7 +382,7 @@ a {
   height: 1.5rem;
   width: 4rem;
   position: absolute;
-  margin-top: -1.7rem;
+  margin-top: -1.8rem;
   margin-left: 3.9rem;
 }
 .forget {

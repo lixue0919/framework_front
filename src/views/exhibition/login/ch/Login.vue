@@ -189,7 +189,7 @@ export default {
 #login{
   @import '@/common/scss/login.scss';
   .lgin-large {
-    margin-top: 1.6rem;
+    margin-top: 1.55rem;
   }
   .footer {
     text-align: -webkit-center;

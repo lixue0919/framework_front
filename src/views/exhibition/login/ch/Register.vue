@@ -8,32 +8,29 @@
           <div class="filed left">
             <i class="iconfont icou"></i>
             <span class="formTitleStyle">用户注册</span>
-            <span class="signstyle">已有账户?
-              <a @click="open()">去登录</a>
-            </span>
+            <span class="signstyle">已有账户?<a @click="open()">去登录</a></span>
           </div>
           <form autocomplete="off" name="reg-form">
-            <div class="filed">
+            <el-row class="filed">
               <el-input type="text" class="inputstyle" v-model="mobile" name="mobile" id="mobile" placeholder="请输入手机号" prefix-icon="iconfont icon-login-phone" @blur="mobileCheck"></el-input>
-              <button type="button" id="mobile-btn" class="verficode phonebtn" @click="getMessageCode()" v-text="messageCodeText" :disabled="mobileBtnDisabled"></button>
+              <button type="button" id="mobile-btn" :class='["verficode","phonebtn",CONSTANT.widthData<=CONSTANT.widthReal?"phonebtn-small":"phonebtn-large"]' @click="getMessageCode()" v-text="messageCodeText" :disabled="mobileBtnDisabled"></button>
               <p class="alert" v-show="mobileAlertFlag">&nbsp;&nbsp;*请填写正确的手机号码</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input v-model="messageCode" name="messageCode" id="messageCode" placeholder="请输入手机验证码" @blur="messageCodeCheck" prefix-icon="iconfont icon-login-validate"></el-input>
               <p class="alert1" v-show="messageCodeAlertFlag">&nbsp;&nbsp;*验证码不正确</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="请输入密码" prefix-icon="iconfont icon-login-password" type="password" class="inputstyle" v-model="password1" name="password1" id="password1" @blur="password1Check"></el-input>
               <p class="alert2" v-show="password1AlertFlag">&nbsp;&nbsp;*密码需为6-16位字母数字组合</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input type="password" class="inputstyle" v-model="password2" name="password2" id="password2" placeholder="请再次输入密码" @blur="password2Check" prefix-icon="iconfont icon-login-checkpass"></el-input>
               <p class="alert3" v-show="password2AlertFlag">&nbsp;&nbsp;*两次密码不一致</p>
-            </div>
-
-            <div class="filed lgin">
-              <el-button type="danger" @click="register()" round>注册</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger" @click="register()" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>注册</el-button>
+            </el-row>
           </form>
         </div>
       </el-col>
@@ -220,8 +217,11 @@ export default {
 <style lang="scss">
 #register{
   @import "@/common/scss/login.scss";
-  .lgin {
-    margin-top: 3.85rem;
+  .lgin-small {
+    margin-top: 1rem;
+  }
+  .lgin-large {
+    margin-top: 2.5rem;
   }
 }
 </style>

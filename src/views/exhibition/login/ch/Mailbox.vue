@@ -13,18 +13,20 @@
             </span>
           </div>
           <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform" method="post">
-            <div class="filed">
+            <el-row class="filed">
               <el-input placeholder="邮箱" v-model="email" name="email" id="email" prefix-icon="iconfont icon-login-mail" @blur="FPBmailCheck"></el-input>
-              <button type="button" id="FUmail-btn" class="verficode phonebtn" @click="getFPBMailCode()" v-text=mailCodeText :disabled="mailBtnDisabled"></button>
+              <button type="button" id="FUmail-btn" :class='["verficode","phonebtn",CONSTANT.widthData<=CONSTANT.widthReal?"phonebtn-small":"phonebtn-large"]' @click="getFPBMailCode()" v-text=mailCodeText :disabled="mailBtnDisabled"></button>
               <p class="alert" v-show="mailAlertFlag">&nbsp;&nbsp;*邮箱格式不正确</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="邮件验证码" v-model="mailCode" name="mailCode" id="mailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
               <p class="alert1" v-show="mailCodeAlertFlag">&nbsp;&nbsp;*验证码输入错误</p>
-            </div>
-            <div class="filed lgin">
-              <el-button type="danger" @click="FPBIdentify()" round>确定</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger" @click="FPBIdentify()" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>确定</el-button>
+            </el-row>
           </form>
         </div>
       </el-col>

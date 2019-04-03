@@ -10,15 +10,17 @@
             <span class="formTitleStyle">管理员登录</span>
           </div>
           <form ref="GLYloginForm" id="GLYloginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed ">
+            <el-row class="filed ">
               <el-input placeholder="用户名" v-model="GLYusername" prefix-icon="iconfont icon-login-username"></el-input>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="密码" v-model="GLYpassword" prefix-icon="iconfont icon-login-password" type="password"></el-input>
-            </div>
-            <div class="filed lgin">
-              <el-button type="danger" @click="GLYlogin" round>登录</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger" @click="GLYlogin" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>登录</el-button>
+            </el-row>
           </form>
         </div>
       </el-col>

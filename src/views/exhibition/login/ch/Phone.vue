@@ -11,18 +11,20 @@
             <span class="signstyle"><a @click="open()">返回登录</a></span>
           </div>
           <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed">
+            <el-row class="filed">
               <el-input placeholder="手机号" v-model="mobile" name="mobile" id="mobile" prefix-icon="iconfont icon-login-phone" @blur="mobileCheck"></el-input>
-              <button type="button" id="FUmail-btn" class="verficode phonebtn"  @click="getMessageCode()" v-text=messageCodeText :disabled="mobileBtnDisabled"></button>
+              <button type="button" id="FUmail-btn" :class='["verficode","phonebtn",CONSTANT.widthData<=CONSTANT.widthReal?"phonebtn-small":"phonebtn-large"]'  @click="getMessageCode()" v-text=messageCodeText :disabled="mobileBtnDisabled"></button>
               <p class="alert" v-show="mobileAlertFlag">&nbsp;&nbsp;*手机号码格式不正确</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input v-model="messageCode" name="messageCode" id="messageCode" placeholder="短信验证码" prefix-icon="iconfont icon-login-validate" @blur="messageCodeCheck"></el-input>
               <p class="alert1" v-show="messageCodeAlertFlag">&nbsp;&nbsp;*短信验证码不正确</p>
-            </div>
-            <div class="filed lgin">
-              <el-button type="danger"  @click="FPCIdentify()" round>确定</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger"  @click="FPCIdentify()" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>确定</el-button>
+            </el-row>
           </form>
         </div>
       </el-col>
