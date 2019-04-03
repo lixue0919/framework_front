@@ -12,7 +12,7 @@
           <img class="titlestyle" src="/static/images/login/title.png">
         </p>
       </el-col>
-      <el-col :span="3" class="market_out" style="position:fixed;right:0;text-align:right;margin: 40px 100px 50px -50px;margin-left:-50px;">
+      <el-col :span="3" class="market_out" style="position:fixed;right:0;text-align:right;margin: 40px 60px 50px -50px;margin-left:-50px;">
           <p style="margin:5px 5px 5px 0px;padding:0px;"><a class="lanb"  href="http://61.161.226.197:8090/templates/帮助手册.doc">帮助手册</a>
             <span style="color:#fff;margin-right:10px;">|</span><span class="lana" >中文</span>
             <span style="color:#fff;margin-right:10px;">|</span><span class="lanb" @click="clk()">English</span>
