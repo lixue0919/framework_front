@@ -34,12 +34,6 @@ $blackcolor: #2c2c2c;
   * {
     font-size: 0.95rem;
   }
-  // p {
-  //   margin: 4rem 0 0 6rem;
-  // }
-  // .pstyle {
-  //   margin: 4rem 0 0 0;
-  // }
   .imgstyle {
     height: $heightimg;
     width: $widthimg;
@@ -363,12 +357,19 @@ a {
   height: 30px;
   border: 1px solid #e6e6e6;
 }
-.verification1 {
+.verification-large {
   height: 1.85rem;
   width: 5rem;
   position: absolute;
   margin-top: -2.2rem;
-  margin-left: 3.95rem;
+  margin-left: 5.2rem;
+}
+.verification-small {
+  height: 1.5rem;
+  width: 4rem;
+  position: absolute;
+  margin-top: -1.7rem;
+  margin-left: 3.9rem;
 }
 .forget {
   text-align: right;

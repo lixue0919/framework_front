@@ -21,7 +21,7 @@
             </el-row>
             <el-row class="filed">
               <el-input placeholder="验证码" v-model="picLyanzhengma" prefix-icon="iconfont icon-login-validate" @blur="validateCheck"></el-input>
-              <input type="button" class="verification1 bk" id="code" @click="createCode" v-model="checkCode"></input>
+              <input type="button" id="code" @click="createCode" v-model="checkCode" :class='[CONSTANT.widthData<=CONSTANT.widthReal?"verification-small":"verification-large","bk"]'></input>
               <p class="alert2" v-show="validateAlertFlag">&nbsp;&nbsp;*验证码错误</p>
             </el-row>
             <el-row class="filed right">
@@ -29,7 +29,7 @@
             </el-row>
             <el-row class="filed">&nbsp;</el-row>
             <el-row class="filed lgin">
-              <el-button type="danger" @click="login" round>登录</el-button>
+              <el-button type="danger" @click="login" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"":"lgin-large"]'>登录</el-button>
             </el-row>
           </el-form>
         </div>
@@ -52,18 +52,10 @@ export default {
         // 校验标识符
         usernameAlertFlag: false,
         passwordAlertFlag: false,
-        validateAlertFlag: false,
-        aaa: this.CONSTANT.widthData
+        validateAlertFlag: false
     }
   },
   created(){
-    //判断是否宽屏
-    var winWide = window.screen.availWidth;
-    var wideScreen = false;
-    var zm = this.aaa / 1920;
-    document.body.style.zoom = 0.8;
-    console.log(winWide)
-    console.log(zm);
     this.createCode();
     var type = this.$route.query.type;
     if (type == 'register'||type == 'forgetUsername' || type == 'forgetPassword') {
@@ -196,8 +188,8 @@ export default {
 <style lang="scss">
 #login{
   @import '@/common/scss/login.scss';
-  .lgin {
-    // margin-top: 5rem;
+  .lgin-large {
+    margin-top: 1.6rem;
   }
   .footer {
     text-align: -webkit-center;

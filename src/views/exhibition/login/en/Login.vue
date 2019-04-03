@@ -21,7 +21,7 @@
             </div>
             <div class="filed">
               <el-input placeholder="Verification Code" v-model="picLyanzhengma" class="yanzhengma_input" prefix-icon="iconfont icon-login-validate" @blur="validateCheck"></el-input>
-              <input type="button"  class="verification1 bk" id="code" @click="createCode"  v-model="checkCode"/>
+              <input type="button" id="code" @click="createCode"  v-model="checkCode" <input type="button" id="code" @click="createCode" v-model="checkCode" :class='[CONSTANT.widthData<=CONSTANT.widthReal?"verification-small":"verification-large","bk"]'/>
               <p class="alert2" v-show="validateAlertFlag">*The verification code is incorrect.</p>
             </div>
             <div class="filed right">

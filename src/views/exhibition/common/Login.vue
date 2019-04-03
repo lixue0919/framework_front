@@ -49,14 +49,12 @@ export default {
   },
   data() {
     return {
-     
     };
   },
   created:function(){
-    // this.autoWide();
+    this.autoWide();
   },
   methods: {
-   
     clk(){
       this.$router.push({ path: '/exhibition/login/en/Login' });
     },
@@ -65,18 +63,16 @@ export default {
     },
     //适配屏幕分辨率
     autoWide(){
-        
-        //判断是否宽屏
-        var winWide = window.screen.availWidth;
-        // alert(winWide);
-        var wideScreen = false;
-        var zm = winWide / 1920;
-        document.getElementById('autosize').style.zoom = zm*3 ;
-
-    },
-
+      if (this.CONSTANT.widthData <= this.CONSTANT.widthReal) {
+        document.body.style.zoom = 0.8;
+      }
+      /**
+      var winWide = window.screen.availWidth;
+      var zm = winWide / 1920;
+      document.getElementById('autosize').style.zoom = zm*3 ;
+      */
+    }
   }
-
 };
 </script>
 
@@ -84,18 +80,15 @@ export default {
 
 @import '@/common/scss/login.scss';
 // 右侧中英文切换样式
-  
 .market_out{
   width: 500px;
   .el-tabs__item{
     color:red;
   }
 } 
-
 .market_out p span{
   font-size: 24px; 
 } 
-
 .market_out p a{
   font-size: 24px; 
 } 
@@ -105,7 +98,6 @@ export default {
 .lanb {
   color: $whitecolor;
 }
-
 .footer {
   p{
     margin: 0px;
@@ -120,7 +112,6 @@ export default {
     font-size: 0.7rem;
   }
 }
-
 .footerstyle p{
   font-size: 16px;
 }
