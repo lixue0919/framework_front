@@ -40,6 +40,9 @@ $blackcolor: #2c2c2c;
   .imgstyle {
     height: $heightimg;
     width: $widthimg;
+    float: left;
+    position: absolute;
+    margin: 4rem 0 0 6rem;
   }
   .titlestyle {
     height: $heighttitle;
