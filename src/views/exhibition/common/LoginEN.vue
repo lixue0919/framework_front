@@ -12,7 +12,7 @@
         <el-col :span="4" class="market_out" style="position:fixed;right:0;text-align:right;margin:50px;">
             <p style="margin:5px 5px 5px 0px;padding:0px;">
               <a class="lana" href="http://61.161.226.197:8090/templates/帮助手册.doc">Help</a>
-              <span style="color:#fff;margin-right:10px;">|</span><span class="lana" @click="clk()">Chinese</span>
+              <span style="color:#fff;margin-right:10px;">|</span><span class="lana" @click="clk()">中文</span>
               <span style="color:#fff;margin-right:10px;">|</span><span class="lanb" >English</span>
             </p>
             <p style="margin:15px 5px 5px 0px;padding:0px;"><a class="lana" @click="zgclk" style="background:rgba(0,0,0,0.2);padding:5px;">View Booth Reservations</a></p>
