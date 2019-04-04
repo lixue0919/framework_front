@@ -51,6 +51,12 @@ $blackcolor: #2c2c2c;
   .pstyle-small {
     margin: 4rem 0 0 0;
   }
+  .pstyle-eng-large {
+    margin: 10rem 0 0 0;
+  }
+  .pstyle-eng-small {
+    margin: 6rem 0 0 0;
+  }
 }
 .lana {
   color: $blackcolor;
@@ -131,9 +137,9 @@ $blackcolor: #2c2c2c;
     cursor: pointer;
   }
 }
-.yanzhengma_input{
-  width: 220px;
-}
+// .yanzhengma_input{
+//   width: 220px;
+// }
 .disappear{
   visibility:hidden;
 }
@@ -382,7 +388,7 @@ a {
   height: 1.5rem;
   width: 4rem;
   position: absolute;
-  margin-top: -1.8rem;
+  margin-top: -1.75rem;
   margin-left: 3.9rem;
 }
 .forget {

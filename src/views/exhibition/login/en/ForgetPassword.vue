@@ -10,19 +10,21 @@
             <span class="formTitleStyle">Password Modification</span>
             <span class="signstyle"><a @click="open()">Return Login</a></span>
           </div>
-          <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed">
+          <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform" method="post">
+            <el-row class="filed">
               <el-input placeholder="Email" v-model="FPBmail" name="FPBmail" id="FPBmail" prefix-icon="iconfont icon-login-mail" @blur="FPBmailCheck"></el-input>
               <button type="button" id="FUmail-btn" class="verficode phonebtnEN" @click="getFPBMailCode()" v-text=FPBmailCodeText :disabled="FPBmailBtnDisabled"></button>
               <p class="alert" v-show="mailAlertFlag">*The email is incorrect.</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="Mail Verification Code"  v-model="FPBmailCode" name="FPBmailCode" id="FPBmailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
               <p class="alert1" v-show="mailCodeAlertFlag">*The verification code is incorrect.</p>
-            </div>
-            <div class="filed lgin">
-              <el-button type="danger" @click="FPBIdentify()" round>Confirm</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed">&nbsp;&nbsp;</el-row>
+            <el-row class="filed">&nbsp;&nbsp;</el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger" @click="FPBIdentify()" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>Confirm</el-button>
+            </el-row>
           </form>
         </div>
       </el-col>
@@ -136,6 +138,7 @@ export default {
     //Confirm点击事件
     FPBIdentify() {
       let vm = this;
+      vm.$router.push({name:"exhibition/login/en/changePassword"});
       if (!(/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@[0-9A-Za-z]+(?:\.[0-9A-Za-z]+)+$/.test(this.FPBmail))) {
         this.mailAlertFlag = true;
       } else if (this.FPBmailCode != this.FPBmailCodeReal || this.FPBmailCode == '') {
@@ -155,8 +158,5 @@ export default {
 <style lang="scss">
 #forgetPasswordEn{
   @import '@/common/scss/login.scss';
-  .lgin {
-    margin-top: 10.8rem;
-  }
 }
 </style>

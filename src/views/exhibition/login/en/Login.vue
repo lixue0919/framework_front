@@ -11,25 +11,26 @@
             <span class="signstyle">No Account?<router-link :to="{path:'/exhibition/login/en/Register'}"><a>To Register</a></router-link></span>
           </div>
           <el-form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed">
+            <el-row class="filed">
               <el-input placeholder="Username" v-model="username" prefix-icon="iconfont icon-login-username" @blur="mailCheck"></el-input>
               <p class="alert" v-show="usernameAlertFlag">*The email is incorrect.</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="Password" v-model="password" prefix-icon="iconfont icon-login-password" type="password" @blur="passwordCheck"></el-input>
               <p class="alert1" v-show="passwordAlertFlag">*The password can not be empty.</p>
-            </div>
-            <div class="filed">
-              <el-input placeholder="Verification Code" v-model="picLyanzhengma" class="yanzhengma_input" prefix-icon="iconfont icon-login-validate" @blur="validateCheck"></el-input>
-              <input type="button" id="code" @click="createCode"  v-model="checkCode" <input type="button" id="code" @click="createCode" v-model="checkCode" :class='[CONSTANT.widthData<=CONSTANT.widthReal?"verification-small":"verification-large","bk"]'/>
+            </el-row>
+            <el-row class="filed">
+              <el-input placeholder="Verification Code" v-model="picLyanzhengma" prefix-icon="iconfont icon-login-validate" @blur="validateCheck"></el-input>
+              <input type="button" id="code" @click="createCode" v-model="checkCode" :class='[CONSTANT.widthData<=CONSTANT.widthReal?"verification-small":"verification-large","bk"]'></input>
               <p class="alert2" v-show="validateAlertFlag">*The verification code is incorrect.</p>
-            </div>
-            <div class="filed right">
+            </el-row>
+            <el-row class="filed right">
               <span class="muchtab"><router-link :to="{path:'/exhibition/login/en/ForgetUsername'}"><a>Forget Username</a></router-link>  |  <router-link :to="{path:'/exhibition/login/en/ForgetPassword'}"><a>Forget Password</a></router-link></span>
-            </div>
-            <div class="filed lgin">
-              <el-button type="danger" @click="login" round>Login</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed">&nbsp;</el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger" @click="login" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"":"lgin-large"]'>Login</el-button>
+            </el-row>
           </el-form>
         </div>
       </el-col>
@@ -185,8 +186,8 @@ export default {
 <style lang="scss">
 #loginEn{
   @import '@/common/scss/login.scss';
-  .lgin {
-    margin-top: 5rem;
+  .lgin-large {
+    margin-top: 1.55rem;
   }
 }
 </style>

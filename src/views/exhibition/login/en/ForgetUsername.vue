@@ -11,18 +11,20 @@
             <span class="signstyle"><a @click="open()">Back to Login</a></span>
           </div>
           <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed">
+            <el-row class="filed">
               <el-input placeholder="Association Email" v-model="FUmail" name="FUmail" id="FUmail" prefix-icon="iconfont icon-login-mail" @blur="FUmailCheck"></el-input>
               <button type="button" id="FUmail-btn" class="verficode phonebtnEN" @click="getFUMailCode()" v-text=FUmailCodeText :disabled="FUmailBtnDisabled"></button>
               <p class="alert" v-show="mailAlertFlag">*The email is incorrect.</p>
-            </div>
-            <div class="filed">
+            </el-row>
+            <el-row class="filed">
               <el-input placeholder="Mail Verification Code"  v-model="FUmailCode" name="FUmailCode" id="FUmailCode" prefix-icon="iconfont icon-login-validate" @blur="mailCodeCheck"></el-input>
               <p class="alert1" v-show="mailCodeAlertFlag">*The verification code is incorrect.</p>
-            </div>
-            <div class="filed lgin">
-              <el-button type="danger" @click="FUIdentify()" round>Confirm</el-button>
-            </div>
+            </el-row>
+            <el-row class="filed">&nbsp;&nbsp;</el-row>
+            <el-row class="filed">&nbsp;&nbsp;</el-row>
+            <el-row class="filed lgin">
+              <el-button type="danger" @click="FUIdentify()" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>Confirm</el-button>
+            </el-row>
           </form>
         </div>
       </el-col>

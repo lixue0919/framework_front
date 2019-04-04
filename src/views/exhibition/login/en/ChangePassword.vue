@@ -10,22 +10,23 @@
             <span class="signstyle"><a @click="open()">To Login</a></span>
           </div>
           <form ref="loginForm" id="loginForm" autocomplete="off" name="loginform"  method="post">
-            <div class="filed">
+            <el-row  class="filed">
               <el-input placeholder="Please input an email" v-model="FPDusername" name="FPDusername" id="FPDusername" prefix-icon="iconfont icon-login-mail" :disabled="FPDusernameFlag"></el-input>
-            </div>
-            <div class="filed">
+            </el-row >
+            <el-row  class="filed">
               <el-input placeholder="Please input a password" prefix-icon="iconfont icon-login-password" type="password" class="inputstyle" v-model="FPDpassword1" name="FPDpassword1"
                 id="FPDpassword1" @blur="FPDpassword1Check"></el-input>
-              <p class="alert1" v-show="FPDpassword1AlertFlag">*Password must be 6-16-bit alphanumeric combination.</p>
-            </div>
-            <div class="filed">
+              <p class="alert1" v-show="FPDpassword1AlertFlag">*Must be 6-16-bit alphanumeric.</p>
+            </el-row >
+            <el-row  class="filed">
               <el-input type="password" class="inputstyle" v-model="FPDpassword2" name="FPDpassword2" id="FPDpassword2"
                 placeholder="Please input the password again" @blur="FPDpassword2Check" prefix-icon="iconfont icon-login-checkpass"></el-input>
               <p class="alert2" v-show="FPDpassword2AlertFlag">*The two entries do not match.</p>
-            </div>
-            <div class="filed lgin">
-            <el-button type="danger" @click="updatePassword()" round>Confirm</el-button>
-            </div>
+            </el-row >
+            <el-row class="filed">&nbsp;&nbsp;</el-row>
+            <el-row  class="filed lgin">
+              <el-button type="danger" @click="updatePassword()" round :class='[CONSTANT.widthData<=CONSTANT.widthReal?"lgin-small":"lgin-large"]'>Confirm</el-button>
+            </el-row >
           </form>
         </div>
       </el-col>
@@ -129,8 +130,11 @@ export default {
 <style lang="scss">
 #changePasswordEn{
   @import '@/common/scss/login.scss';
-  .lgin {
-    margin-top: 7.25rem;
+  .lgin-small {
+    margin-top: 2rem;
+  }
+  .lgin-large {
+    margin-top: 3.8rem;
   }
 }
 </style>
