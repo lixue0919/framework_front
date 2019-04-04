@@ -20,13 +20,11 @@
       </el-row>
     </div>
     <router-view></router-view>
-    <el-row class="footerstyle">
-      <el-col :span="4">&nbsp;</el-col>
-      <el-col :span="16" class="footer">
-        <p  style="margin-bottom:-20px;">建议使用谷歌、搜狗、360和火狐浏览器</p>
-        <p>业务咨询：010-87792278，技术支持：024-31530337，分机号606</p>
+    <el-row>
+      <el-col :span="24" class="footer">
+        <p>建议使用谷歌、搜狗、360和火狐浏览器</p>
+        <p style="margin-top:8px;">业务咨询：010-87792278，技术支持：024-31530337，分机号606</p>
       </el-col>
-      <el-col :span="4">&nbsp;</el-col>
     </el-row>
   </div>
 </template>
@@ -99,20 +97,9 @@ export default {
   color: $whitecolor;
 }
 .footer {
-  p{
-    margin: 0px;
-    padding:0px;
-  }
-  text-align: -webkit-center;
   color: $whitecolor;
-  font-size: 0.7rem;
-  * {
-    text-align: -webkit-center;
-    color: $whitecolor;
-    font-size: 0.7rem;
-  }
-}
-.footerstyle p{
-  font-size: 16px;
+  text-align: -webkit-center;
+  position: fixed;
+  bottom: 5%;
 }
 </style>
